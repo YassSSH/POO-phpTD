@@ -40,4 +40,12 @@ public function __construct(string $_nom , array $_notes){
         $this->_notes = $notes;
     }
 
+
+    public function calculeMoyenne() {
+   $moyenne = array_sum($this->_notes) / count($this->_notes);
+
+    return round($moyenne , 2);
+    }
+
+
 }

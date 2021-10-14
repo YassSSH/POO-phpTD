@@ -2,6 +2,7 @@
 
 include ("./Point.php");
 include ("./TroisPoints.php");
+include ("./Stagiaire.php")
 
 ?>
 <!DOCTYPE html>
@@ -14,9 +15,9 @@ include ("./TroisPoints.php");
 </head>
 <body>
 <form action="index.php" method="post">
-    <p>A : <input type="text" name="Aord" value="<?php echo  $_POST['Aord']?> /> <input type="text" name="Aabs" value="<?php echo  $_POST['Aabs']?> /></p>
-    <p>B : <input type="text" name="Bord" value="<?php echo  $_POST['Bord']?> /> <input type="text" name="Babs" value="<?php echo  $_POST['Babs']?> /></p>
-    <p>C : <input type="text" name="Cord" value="<?php echo  $_POST['Cord']?> /> <input  type="text" name="Cabs" value="<?php echo  $_POST['Cabs']?>"  /></p>
+    <p>A : <input type="text" name="Aord"/> <input type="text" name="Aabs"  /></p>
+    <p>B : <input type="text" name="Bord" /> <input type="text" name="Babs"/></p>
+    <p>C : <input type="text" name="Cord"/> <input  type="text" name="Cabs"/></p>
     <p><input type="submit" value="OK"></p>
 </form>
 </body>
@@ -85,3 +86,10 @@ function bool1(){
 
 }
 bool1();
+
+function moyenne(){
+    $stagiere = new Stagiaire('TOM', ['8' , '20' , '5']);
+    $moy = $stagiere->calculeMoyenne();
+    echo $moy;
+}
+moyenne();
