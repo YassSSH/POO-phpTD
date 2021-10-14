@@ -1,4 +1,9 @@
+<?php
 
+include ("./Point.php");
+include ("./TroisPoints.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,12 +23,19 @@
 </html>
 
 <?php
-include ("./Point.php");
-include ("./TroisPoints.php");
+if(!empty($_POST['Aord']) && !empty($_POST['Aabs']) && !empty($_POST['Bord']) && !empty($_POST['Babs']) && !empty($_POST['Cord']) && !empty($_POST['Cabs']))
+{
+    $p1 = htmlspecialchars($_POST['Aord'] . ',' . $_POST['Aabs']);
+    $p2 = htmlspecialchars($_POST['Bord'] . ',' . $_POST['Babs']);
+    $p3 = htmlspecialchars($_POST['Cord'] . ',' . $_POST['Cabs']);
+
+    echo $p1 . ',' . $p2 . ',' . $p3 ;
+}
+
 
 
 function bool(){
-    $p1 = new Point($_POST['Aord'], $_POST['Aabs']);
+    $p1 = new Point('10', '10');
     $p2 = new Point('10', '10');
     $p3 = new Point('10', '10');
     $var = new TroisPoints($p1, $p2, $p3);
