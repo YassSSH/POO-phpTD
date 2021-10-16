@@ -47,5 +47,14 @@ public function __construct(string $_nom , array $_notes){
     return round($moyenne , 2);
     }
 
+    public function noteMax() {
+        $max = max($this->_notes);
+        return $max;
+    }
+
+    public function noteMin() {
+        $min = min($this->_notes);
+        return $min;
+    }
 
 }

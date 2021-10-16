@@ -2,7 +2,8 @@
 
 include ("./Point.php");
 include ("./TroisPoints.php");
-include ("./Stagiaire.php")
+include ("./Stagiaire.php");
+include ("./Formation.php");
 
 ?>
 <!DOCTYPE html>
@@ -90,6 +91,31 @@ bool1();
 function moyenne(){
     $stagiere = new Stagiaire('TOM', ['8' , '20' , '5']);
     $moy = $stagiere->calculeMoyenne();
-    echo $moy;
+    echo $moy . '<BR>';
 }
 moyenne();
+
+function maxx() {
+    $stagiere = new Stagiaire('TOM', ['8' , '20' , '5']);
+    $max = $stagiere->noteMax();
+    echo $max . '<BR>';
+}
+maxx();
+
+function minn(){
+    $stagiere = new Stagiaire('TOM', ['8' , '20' , '5']);
+$min = $stagiere->noteMin();
+echo $min . '<BR>';
+}
+minn();
+
+function calculdefou(){
+        $stagiere1 = new Stagiaire('YASS', ['20', '14', '2']);
+        $stagiere2 = new Stagiaire('BIBI', ['12', '1', '14']);
+        $stagiere3 = new Stagiaire('BOUBOU', ['2', '15', '17']);
+    $formation =  new Formation( 'PAPIER' , '75' , [$stagiere1 , $stagiere2 , $stagiere3]);
+    echo $formation;
+    $result = $formation->calculerMoyenneFormation();
+    var_dump($result);
+}
+calculdefou();
